@@ -1,9 +1,9 @@
 import React from 'react';
-import { Card, CardContent } from "../components/Card";
+import { Card, CardContent } from "../../components/Card";
 import { User, Users, BarChart3, Settings } from "lucide-react";
 import { motion } from "framer-motion";
 
-const Student = () => {
+const StudentDashboard = () => {
   return (
     <div className="flex">
       {/* Sidebar */}
@@ -40,7 +40,7 @@ const Student = () => {
 
       {/* Main Content */}
       <div className="flex-1 p-6">
-        <h1 className="text-3xl font-bold mb-6">Admin Dashboard</h1>
+        <h1 className="text-3xl font-bold mb-6">Student Dashboard</h1>
 
         <div className="grid grid-cols-3 gap-4 mb-6">
           <Card>
@@ -130,4 +130,4 @@ const Student = () => {
   );
 };
 
-export default Student;
+export default StudentDashboard;
