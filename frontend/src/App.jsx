@@ -6,23 +6,23 @@ import Home from './pages/Home';
 import Task from './pages/Task';
 import Attendance from './pages/Attendance';
 import Batch from './pages/Batch';
-import AssignTask from './pages/AssignTask';
+import AssignTask from './pages/Trainer/AssignTask';
 import StudentPage from './pages/Trainer/StudentsPage';
 
 // Login Pages
-import StudentLogin from './pages/Login/StudentLogin';
-import TrainerLogin from './pages/Login/TrainerLogin';
-import AdminLogin from './pages/Login/AdminLogin';
+import StudentLogin from './pages/Student/StudentLogin';
+import TrainerLogin from './pages/Trainer/TrainerLogin';
+import AdminLogin from './pages/Admin/AdminLogin';
 
 // Register Pages
-import StudentRegister from './pages/Register/StudentRegister';
-import TrainerRegister from './pages/Register/TrainerRegister';
-import AdminRegister from './pages/Register/AdminRegister';
+import StudentRegister from './pages/Student/StudentRegister';
+import TrainerRegister from './pages/Trainer/TrainerRegister';
+import AdminRegister from './pages/Admin/AdminRegister';
 
 // Dashboard Pages
-import StudentDashboard from './pages/Dashboard/StudentDashboard';
-import TrainerDashboard from './pages/Dashboard/TrainerDashboard';
-import AdminDashboard from './pages/Dashboard/AdminDashboard';
+import StudentDashboard from './pages/Student/StudentDashboard';
+import TrainerDashboard from './pages/Trainer/TrainerDashboard';
+import AdminDashboard from './pages/Admin/AdminDashboard';
 
 function App() {
   return (
