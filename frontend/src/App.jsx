@@ -6,6 +6,8 @@ import Home from './pages/Home';
 import Task from './pages/Task';
 import Attendance from './pages/Attendance';
 import Batch from './pages/Batch';
+import AssignTask from './pages/AssignTask';
+import StudentPage from './pages/Trainer/StudentsPage';
 
 // Login Pages
 import StudentLogin from './pages/Login/StudentLogin';
@@ -47,6 +49,11 @@ function App() {
           <Route path="/dashboard/student" element={<StudentDashboard />} />
           <Route path="/dashboard/trainer" element={<TrainerDashboard />} />
           <Route path="/dashboard/admin" element={<AdminDashboard />} />
+
+          {/* functionality for trainer */}
+          <Route path="trainer/assigntask" element={<AssignTask />} />
+          <Route path="trainer/studentPage" element={<StudentPage />} />
+
 
         </Routes>
       </div>
