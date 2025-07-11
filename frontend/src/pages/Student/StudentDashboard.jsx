@@ -1,133 +1,77 @@
+// src/components/TrainerDashboard.jsx
 import React from 'react';
-import { Card, CardContent } from "../../components/Card";
-import { User, Users, BarChart3, Settings } from "lucide-react";
-// import { motion } from "framer-motion";
+import { FaUsers, FaChalkboardTeacher, FaChartLine, FaCog, FaHome, FaFileAlt } from 'react-icons/fa';
+import { useNavigate } from 'react-router-dom';
 
 const StudentDashboard = () => {
-  return (
-    <div className="flex">
-      {/* Sidebar */}
-      <div className="w-64 min-h-screen bg-blue-50 p-4">
-        <div className="flex items-center mb-10">
-          <div className="bg-blue-600 text-white p-2 rounded-full">
-            <User size={24} />
-          </div>
-          <span className="ml-2 text-xl font-bold">EduManage</span>
-        </div>
-        <nav className="space-y-4">
-          <button className="flex items-center w-full p-2 text-blue-700 bg-blue-100 rounded-lg">
-            <BarChart3 className="mr-2" />
-            Dashboard
-          </button>
-          <button className="flex items-center w-full p-2 hover:bg-blue-100 rounded-lg">
-            <Users className="mr-2" />
-            Students
-          </button>
-          <button className="flex items-center w-full p-2 hover:bg-blue-100 rounded-lg">
-            <User className="mr-2" />
-            Trainers
-          </button>
-          <button className="flex items-center w-full p-2 hover:bg-blue-100 rounded-lg">
-            <BarChart3 className="mr-2" />
-            Reports
-          </button>
-          <button className="flex items-center w-full p-2 hover:bg-blue-100 rounded-lg">
-            <Settings className="mr-2" />
-            Settings
-          </button>
-        </nav>
-      </div>
+    const navigate = useNavigate();
+    return (
+        <div className="flex min-h-screen bg-gray-50">
+            {/* Sidebar */}
+            <aside className="w-64 bg-white shadow-lg p-4">
+                <nav className="space-y-4">
+                    <button className="flex items-center w-full px-4 py-2 bg-blue-100 text-blue-700 rounded-md">
+                        <FaHome className="mr-2" /> Dashboard
+                    </button>
+                    <button className="flex items-center w-full px-4 py-2 hover:bg-gray-100 rounded-md" onClick={() => navigate('/trainer/studentsPage')}>
+                        <FaUsers className="mr-2" /> Students
+                    </button>
+                    <button className="flex items-center w-full px-4 py-2 hover:bg-gray-100 rounded-md" onClick={() => navigate('/student/Task')}>
+                        <FaCog className="mr-2" /> Tasks
+                    </button>
+                    <button className="flex items-center w-full px-4 py-2 hover:bg-gray-100 rounded-md">
+                        <FaFileAlt className="mr-2" /> Reports
+                    </button>
+                </nav>
+            </aside>
 
-      {/* Main Content */}
-      <div className="flex-1 p-6">
-        <h1 className="text-3xl font-bold mb-6">Student Dashboard</h1>
+            {/* Main Content */}
+            <main className="flex-1 p-8">
+                <h2 className="text-3xl font-semibold mb-6">Student Dashboard</h2>
 
-        <div className="grid grid-cols-3 gap-4 mb-6">
-          <Card>
-            <CardContent className="flex flex-col items-center justify-center p-4">
-              <User className="text-blue-600 mb-2" size={32} />
-              <p className="text-gray-500">Total Assignments</p>
-              <p className="text-2xl font-bold">1,250</p>
-            </CardContent>
-          </Card>
-          <Card>
-            <CardContent className="flex flex-col items-center justify-center p-4">
-              <Users className="text-blue-600 mb-2" size={32} />
-              <p className="text-gray-500">Total Submission</p>
-              <p className="text-2xl font-bold">25</p>
-            </CardContent>
-          </Card>
-          <Card>
-            <CardContent className="flex flex-col items-center justify-center p-4">
-              <BarChart3 className="text-blue-600 mb-2" size={32} />
-              <p className="text-gray-500">Attendance</p>
-              <p className="text-2xl font-bold">430</p>
-            </CardContent>
-          </Card>
-        </div>
+                {/* Top Cards */}
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-8">
+                    <div className="bg-white p-6 rounded-xl shadow text-center">
+                        <h3 className="text-lg font-medium text-gray-600">Total Tasks</h3>
+                        <p className="text-3xl font-bold text-blue-600 mt-2">1,250</p>
+                    </div>
+                    <div className="bg-white p-6 rounded-xl shadow text-center">
+                        <h3 className="text-lg font-medium text-gray-600">Tasks Assigned</h3>
+                        <p className="text-3xl font-bold text-blue-600 mt-2">58</p>
+                    </div>
+                    <div className="bg-white p-6 rounded-xl shadow text-center">
+                        <h3 className="text-lg font-medium text-gray-600">Attendance Marked</h3>
+                        <p className="text-3xl font-bold text-blue-600 mt-2">92%</p>
+                    </div>
+                </div>
 
-        <div className="grid grid-cols-3 gap-4">
-          <Card>
-            <CardContent>
-              <p className="mb-2 font-semibold">Batch Progress</p>
-              <motion.div
-                className="h-32 bg-gradient-to-r from-blue-100 to-blue-300 rounded-lg"
-                animate={{ scale: [1, 1.05, 1] }}
-                transition={{ duration: 2, repeat: Infinity }}
-              />
-            </CardContent>
-          </Card>
-          <Card>
-            <CardContent>
-              <p className="mb-2 font-semibold">Student Submissions</p>
-              <motion.div
-                className="h-32 bg-gradient-to-r from-blue-100 to-blue-300 rounded-lg"
-                animate={{ scale: [1, 1.05, 1] }}
-                transition={{ duration: 2, repeat: Infinity }}
-              />
-            </CardContent>
-          </Card>
-          <Card>
-            <CardContent>
-              <p className="mb-4 font-semibold">Final Reports</p>
-              <div className="space-y-3">
-                <div className="flex items-center justify-between">
-                  <div className="flex items-center">
-                    <div className="w-8 h-8 bg-blue-200 rounded-full mr-2"></div>
-                    <div>
-                      <p className="font-medium">Jane Doe</p>
-                      <p className="text-xs text-gray-500">2 hours ago</p>
+                {/* Charts Section */}
+                <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                    <div className="bg-white p-6 rounded-xl shadow col-span-2">
+                        <h4 className="text-lg font-semibold mb-2">Attendance Trend</h4>
+                        <div className="h-40 bg-blue-100 rounded"></div>
                     </div>
-                  </div>
-                  <div className="w-2 h-2 bg-blue-600 rounded-full"></div>
-                </div>
-                <div className="flex items-center justify-between">
-                  <div className="flex items-center">
-                    <div className="w-8 h-8 bg-blue-200 rounded-full mr-2"></div>
-                    <div>
-                      <p className="font-medium">John Smith</p>
-                      <p className="text-xs text-gray-500">5 hours ago</p>
+                    <div className="bg-white p-6 rounded-xl shadow">
+                        <h4 className="text-lg font-semibold mb-4">Recent Activity</h4>
+                        <ul className="space-y-3">
+                            <li className="flex justify-between">
+                                <span>Mark Attendance - Batch A</span>
+                                <span className="text-sm text-gray-500">2h ago</span>
+                            </li>
+                            <li className="flex justify-between">
+                                <span>Assigned Task - React Project</span>
+                                <span className="text-sm text-gray-500">5h ago</span>
+                            </li>
+                            <li className="flex justify-between">
+                                <span>Updated Report - Batch B</span>
+                                <span className="text-sm text-gray-500">1d ago</span>
+                            </li>
+                        </ul>
                     </div>
-                  </div>
-                  <div className="w-2 h-2 bg-blue-600 rounded-full"></div>
                 </div>
-                <div className="flex items-center justify-between">
-                  <div className="flex items-center">
-                    <div className="w-8 h-8 bg-blue-200 rounded-full mr-2"></div>
-                    <div>
-                      <p className="font-medium">Alice Johnson</p>
-                      <p className="text-xs text-gray-500">1 day ago</p>
-                    </div>
-                  </div>
-                  <div className="w-2 h-2 bg-blue-600 rounded-full"></div>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
+            </main>
         </div>
-      </div>
-    </div>
-  );
+    );
 };
 
 export default StudentDashboard;

@@ -3,7 +3,7 @@ import Navbar from './components/Navbar';
 
 // Common Pages
 import Home from './pages/Home';
-import Task from './pages/Task';
+import Task from './pages/Student/Task';
 import Attendance from './pages/Attendance';
 import Batch from './pages/Batch';
 import AssignTask from './pages/Trainer/AssignTask';
@@ -53,6 +53,8 @@ function App() {
           {/* functionality for trainer */}
           <Route path="trainer/assigntask" element={<AssignTask />} />
           <Route path="trainer/studentPage" element={<StudentPage />} />
+
+          <Route path="/student/task" element={<Task />} />
 
 
         </Routes>
