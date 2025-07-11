@@ -13,8 +13,8 @@ const StudentDashboard = () => {
                     <button className="flex items-center w-full px-4 py-2 bg-blue-100 text-blue-700 rounded-md">
                         <FaHome className="mr-2" /> Dashboard
                     </button>
-                    <button className="flex items-center w-full px-4 py-2 hover:bg-gray-100 rounded-md" onClick={() => navigate('/trainer/studentsPage')}>
-                        <FaUsers className="mr-2" /> Students
+                    <button className="flex items-center w-full px-4 py-2 hover:bg-gray-100 rounded-md" onClick={() => navigate('/student/submission')}>
+                        <FaUsers className="mr-2" /> Submission
                     </button>
                     <button className="flex items-center w-full px-4 py-2 hover:bg-gray-100 rounded-md" onClick={() => navigate('/student/Task')}>
                         <FaCog className="mr-2" /> Tasks

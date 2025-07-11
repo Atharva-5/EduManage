@@ -23,6 +23,7 @@ import AdminRegister from './pages/Admin/AdminRegister';
 import StudentDashboard from './pages/Student/StudentDashboard';
 import TrainerDashboard from './pages/Trainer/TrainerDashboard';
 import AdminDashboard from './pages/Admin/AdminDashboard';
+import Submission from './pages/Student/Submission';
 
 function App() {
   return (
@@ -55,6 +56,7 @@ function App() {
           <Route path="trainer/studentPage" element={<StudentPage />} />
 
           <Route path="/student/task" element={<Task />} />
+          <Route path="/student/Submission" element={<Submission />} />
 
 
         </Routes>
