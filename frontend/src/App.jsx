@@ -53,10 +53,10 @@ function App() {
 
           {/* functionality for trainer */}
           <Route path="trainer/assigntask" element={<AssignTask />} />
-          <Route path="trainer/studentPage" element={<StudentPage />} />
+          <Route path="trainer/studentsPage" element={<StudentPage />} />
 
           <Route path="/student/task" element={<Task />} />
-          <Route path="/student/Submission" element={<Submission />} />
+          <Route path="/student/submission" element={<Submission />} />
 
 
         </Routes>
